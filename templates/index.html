@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Colorlib Templates">
+    <meta name="author" content="Colorlib">
+    <meta name="keywords" content="Colorlib Templates">
+
+    <!-- Title Page-->
+    <title>CKD</title>
+
+    <!-- Icons font CSS-->
+    <link href="{{ url_for('static', filename='vendor/mdi-font/css/material-design-iconic-font.min.css')}}" rel="stylesheet" media="all">
+    <link href="{{ url_for('static', filename='vendor/font-awesome-4.7/css/font-awesome.min.css')}}" rel="stylesheet" media="all">
+    <!-- Font special for pages-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+
+    <!-- Vendor CSS-->
+    <link href="{{ url_for('static', filename='vendor/select2/select2.min.css')}}" rel="stylesheet" media="all">
+    <link href="{{ url_for('static', filename='vendor/datepicker/daterangepicker.css')}}" rel="stylesheet" media="all">
+
+    <!-- Main CSS-->
+    <link href="{{ url_for('static', filename='css/main.css')}}" rel="stylesheet" media="all">
+</head>
+
+<body>
+    <div class="page-wrapper bg-blue p-t-100 p-b-100 font-robo">
+        <div class="wrapper wrapper--w680">
+            <div class="card card-1">
+                <div class="card-heading"></div>
+                <div class="card-body">
+                    <h2 class="title"><b style="color:blue">MR.</b><b style="color:#D2691E">Doctor</b><br>
+					<b style="font-size: 14px;color:#003cb3">Web Application for classification of Chronic Kidney Disease (CKD) Cases.</b></h2>
+					
+                    <form  action="{{ url_for('Classify') }}" method="post">
+					 <div class="input-group">
+					 	<label style="font-weight:bold"> Enter specific gravity</label>
+                            <input class="input--style-1" type="text" placeholder="values between 1 and 1.02 such as (1.005,1.01,1.015,1.02,1.025)" name="specific_gravity" required>
+                        </div>
+                        <div class="row row-space">
+                            <div class="col-2">
+							<label style="font-weight:bold"> Choose Suger ratio</label>
+                                <div class="rs-select2 js-select-simple select--no-search">
+                                        <select name="Suger" required>
+                                            <option disabled="disabled" selected="selected" value="">Suger</option>
+                                             <option value="0">0</option>
+                                             <option value="1">1</option>
+											 <option value="2">2</option>
+											 <option value="3">3</option>
+                                             <option value="4">4</option>
+											 <option value="5">5</option>
+
+                                        </select>
+                                        <div class="select-dropdown"></div>
+                                    </div> 
+                            </div>
+							 <div class="col-2">
+							<label style="font-weight:bold"> Choose Pus Cell</label>
+                                <div class="rs-select2 js-select-simple select--no-search">
+                                        <select name="Pus_Cell" required>
+                                            <option disabled="disabled" selected="selected" value="">Pus Cell</option>
+                                             <option value="0">Normal</option>
+                                             <option value="1">Abnormal</option>
+                                        </select>
+                                        <div class="select-dropdown"></div>
+                                    </div> 
+                            </div>
+							
+						</div>
+						<br>
+						<div class="row row-space">
+                            <div class="col-2">
+							<label style="font-weight:bold"> Choose Pus Cell clumps</label>
+                                <div class="rs-select2 js-select-simple select--no-search">
+                                        <select name="Pus_Cell_clumps" required>
+                                            <option disabled="disabled" selected="selected" value="">Pus Cell clumps</option>
+                                             <option value="0">Notpresent</option>
+                                             <option value="1">Present</option>
+                                        </select>
+                                        <div class="select-dropdown"></div>
+                              </div> 
+                            </div>
+							 <div class="col-2">
+							<label style="font-weight:bold"> Choose Bacteria</label>
+                                <div class="rs-select2 js-select-simple select--no-search">
+                                        <select name="Bacteria" required>
+                                            <option disabled="disabled" selected="selected" value="">Bacteria</option>
+                                            <option value="0">Notpresent</option>
+                                             <option value="1">Present</option>
+                                        </select>
+                                        <div class="select-dropdown"></div>
+                                    </div> 
+                            </div>
+							</div>
+							<br>
+						<div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+								<label style="font-weight:bold">Enter Blood Glucose Random</label>
+                                <input  class="input--style-1" type="text" placeholder="Enter Value between 20 and 300" name="Blood_Glucose_Random" required>
+                                </div>
+                            </div>
+							<div class="col-2">
+                                <div class="input-group">
+								<label style="font-weight:bold"> Enter Hemoglobin</label>
+                                <input  class="input--style-1" type="text" placeholder="Enter value between 2 and 20" name="Hemoglobin" required>
+                                </div>
+                            </div>
+						<div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+								<label style="font-weight:bold">Enter Packed Cell Volume</label>
+                                <input  class="input--style-1" type="text" placeholder="Enter Value between 5 and 60" name="Packed_Cell_Volume" required>
+                                </div>
+                            </div>
+							<div class="col-2">
+                                <div class="input-group">
+							<label style="font-weight:bold">Enter Red Blood Cell Count</label>
+                            <input  class="input--style-1" type="text" placeholder="Enter value between 2 and 9" name="Red_Blood_Cell_Count" required>
+                                </div>
+                            </div>
+						</div>
+						</div>
+						<br>
+                        <div class="input-group">
+						<label style="font-weight:bold">Enter White Blood Cell Count</label>
+                        <input  class="input--style-1" type="text" placeholder="Enter value between 1000 and 12000" name="White_Blood_Cell_Count" required>
+
+					    </div>
+						<br>
+						<div class="row row-space">
+							<div class="col-2">
+							<label style="font-weight:bold">Choose Hypertension</label>
+					            <div class="rs-select2 js-select-simple select--no-search">
+                                        <select name="Hypertension" required>
+                                            <option disabled="disabled" selected="selected" value="">Hypertension</option>
+                                             <option value="1">Yes</option>
+                                            <option value="0">No</option>
+                                        </select>
+                                        <div class="select-dropdown"></div>
+                                </div> 
+								</div>
+							<div class="col-2">
+							  <label style="font-weight:bold">Choose Diabetes Mellitus</label>
+                                 <div class="rs-select2 js-select-simple select--no-search">
+                                        <select name="Diabetes_Mellitus" required>
+                                            <option disabled="disabled" selected="selected" value="">Diabetes Mellitus</option>
+                                             <option value="1">Yes</option>
+                                            <option value="0">No</option>
+                                        </select>
+                                        <div class="select-dropdown"></div>
+                                </div>								
+                            </div>
+						</div>
+						<br>
+					<div class="row row-space">
+							<div class="col-2">
+							<label style="font-weight:bold">Choose Coronary Artery Disease</label>
+					            <div class="rs-select2 js-select-simple select--no-search">
+                                        <select name="Coronary_Artery" required>
+                                            <option disabled="disabled" selected="selected" value="">Coronary Artery</option>
+                                             <option value="1">Yes</option>
+                                            <option value="0">No</option>
+                                        </select>
+                                        <div class="select-dropdown"></div>
+                                </div> 
+								</div>
+							<div class="col-2">
+							  <label style="font-weight:bold">Choose Appetite</label>
+                                 <div class="rs-select2 js-select-simple select--no-search">
+                                        <select name="Appetite" required>
+                                            <option disabled="disabled" selected="selected" value="">Appetite</option>
+                                             <option value="1">Yes</option>
+                                            <option value="0">No</option>
+                                        </select>
+                                        <div class="select-dropdown"></div>
+                                </div>								
+                              
+                            </div>
+					</div>
+				
+                        <div class="p-t-20">
+                            <button class="btn btn--radius btn--green" type="submit")">Diagnose</button>
+                        </div>
+						<br><br>
+				  {% block content %}
+					{% if Classify =="1.0" %}
+                    <span style="font-weight: bold"> This case has <label style="color:red;font-weight: bold;font-size: 17px">   Chronic Kidney Disease (CKD).</label> </span>
+				  	{% elif Classify == "0.0" %}
+                    <span style="font-weight: bold"> This case hasn't  <label style="color:green;font-weight: bold;font-size: 17px">  Chronic Kidney Disease (CKD).</label> </span>
+					{% else %}
+				    {% endif %}
+				 {% endblock content %}
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Jquery JS-->
+    <script src="{{ url_for('static', filename='vendor/jquery/jquery.min.js')}}"></script>
+    <!-- Vendor JS-->
+    <script src="{{ url_for('static', filename='vendor/select2/select2.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='vendor/datepicker/moment.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='vendor/datepicker/daterangepicker.js')}}"></script>
+
+    <!-- Main JS-->
+    <script src="{{ url_for('static', filename='js/global.js')}}"></script>
+	
+        <script type="text/javascript">
+	    function Validate() {
+        var ddl = document.getElementsByClassName("rs-select2");
+        if (ddl.value == "") {
+            alert("Please select an option!");
+            return false;
+        }
+        return true;
+    }
+       </script>
+ 
+</script> 
+
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+
+</html>
+<!-- end document-->
