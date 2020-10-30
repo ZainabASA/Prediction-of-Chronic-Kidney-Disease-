@@ -18,6 +18,8 @@ instances [2].
 Numeric features include 'id', 'age', 'blood pressure', 'specific gravity', 'albumin', 'sugar',
 blood_glucose_random', 'blood urea', 'serum creatinine', 'sodium', 'potassium', and
 'haemoglobin'
+
+
 Categorical features include red_blood_cells', 'pus_cell', 'pus_cell_clumps', 'bacteria',
 'packed_cell_volume', 'white_blood_cell_count', 'red_blood_cell_count',
 'hypertension', 'diabetes_mellitus', 'coronary_artery_disease',
