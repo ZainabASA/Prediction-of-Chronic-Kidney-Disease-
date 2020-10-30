@@ -1,6 +1,6 @@
 # Prediction-of-Chronic-Kidney-Disease-
 Web Application for Chronic Kidney Disease (CKD) Classification based on ML algorithms. 
-https://ckdclassification.herokuapp.com/
+Project Link: https://ckdclassification.herokuapp.com/
 
 
 ## Problem Definition
@@ -26,5 +26,6 @@ Categorical features include red_blood_cells', 'pus_cell', 'pus_cell_clumps', 'b
 ## References
 [1] Ajaimy, Maria, and Michal L. Melamed. "COVID-19 in patients with kidney disease."
 (2020): 1087-1089.
+
 [2] https://archive.ics.uci.edu/ml/datasets/Chronic_Kidney_Disease
 
